@@ -1,8 +1,32 @@
 aid: zircuit
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/zircuit.png
 name: Zircuit
-description: 'Zircuit is a company surfaced as a portfolio company of pantera-capital and added to the
-  API Evangelist network as a stub for enrichment. Sector: crypto. This profile is a lead awaiting the
-  enrichment pipeline.'
+description: >-
+  Zircuit is a zero-knowledge (zk) rollup Layer 2 blockchain and secure onchain
+  finance platform. The network is fully EVM-compatible and OP-Stack based,
+  letting developers deploy standard Solidity smart contracts (via Foundry and
+  the usual Ethereum tooling) while settling to Ethereum with zk validity
+  proofs. Zircuit exposes standard Ethereum JSON-RPC endpoints for mainnet
+  (chain ID 48900) and the Garfield testnet (chain ID 48898), a canonical
+  L1<>L2 bridge, a relayer service (EIP-7702 gasless relaying), a transaction
+  simulation surface, and the GUD Trading Engine — a REST API that aggregates
+  cross-chain liquidity to return best-execution quotes and signable
+  transaction data. On top of the chain, Zircuit Finance and the Liquidity Hub
+  offer institutional-grade yield and LST/LRT staking. Backed by Pantera
+  Capital; the network and contracts have been audited by six independent
+  security firms and run a bug-bounty program.
 url: https://raw.githubusercontent.com/api-evangelist/zircuit/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,16 +36,116 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
 - Crypto
-apis: []
+- Blockchain
+- Layer 2
+- Rollup
+- Zero Knowledge
+- EVM
+- DeFi
+- JSON-RPC
+- Web3
+apis:
+- name: Zircuit JSON-RPC API
+  description: >-
+    Standard Ethereum JSON-RPC 2.0 interface to the Zircuit L2 network (HTTP and WebSocket) for reading
+    chain state and submitting transactions. Mainnet is chain ID 48900; the Garfield testnet is chain
+    ID 48898. EVM-compatible, so the full eth_* / net_* / web3_* method set applies. DRPC additionally
+    offers paid high-performance node access with debug traces.
+  humanURL: https://docs.zircuit.com/infra/rpcs
+  baseURL: https://mainnet.zircuit.com
+  tags:
+  - JSON-RPC
+  - Ethereum
+  - Blockchain
+  - Layer 2
+  properties:
+  - type: Documentation
+    url: https://docs.zircuit.com/infra/rpcs
+  - type: Sandbox
+    url: https://garfield-testnet.zircuit.com
+  - type: x-json-rpc-websocket
+    url: wss://mainnet.zircuit.com
+  - type: x-chain-id
+    url: '48900'
+- aid: zircuit:zircuit-orders-api
+  name: Zircuit Orders API
+  description: Trade estimates and cross-chain order execution data.
+  humanURL: https://docs.zircuit.com/infra/rpcs
+  baseURL: https://mainnet.zircuit.com
+  tags:
+  - Orders
+  properties:
+  - type: OpenAPI
+    url: openapi/zircuit-orders-api-openapi.yml
+  - type: Documentation
+    url: https://docs.zircuit.com/infra/gud-trading-engine-beta/api-endpoint
+  - type: Authentication
+    url: authentication/zircuit-authentication.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/zircuit-domain-security.yml
 - type: Website
   url: https://www.zircuit.com/
+- type: DeveloperPortal
+  url: https://docs.zircuit.com/build/start
+- type: Documentation
+  url: https://docs.zircuit.com/
+- type: APIReference
+  url: https://docs.zircuit.com/infra/rpcs
+- type: GettingStarted
+  url: https://docs.zircuit.com/build/start
+- type: Blog
+  url: https://www.zircuit.com/blog
+- type: GitHubOrganization
+  url: https://github.com/zircuit-labs
+- type: SignUp
+  url: https://finance.zircuit.com/
+- type: TermsOfService
+  url: https://static.zircuit.com/docs/tos.pdf
+- type: PrivacyPolicy
+  url: https://static.zircuit.com/docs/pp.pdf
+- type: Support
+  url: https://jobs.ashbyhq.com/Zircuit
+- type: StatusPage
+  url: https://status.zircuit.com/
+- type: x-explorer
+  url: https://explorer.zircuit.com/
+- type: LLMsTxt
+  url: llms/zircuit-llms.txt
+- type: Authentication
+  url: authentication/zircuit-authentication.yml
+- type: Conventions
+  url: conventions/zircuit-conventions.yml
+- type: Conformance
+  url: conformance/zircuit-conformance.yml
+- type: ErrorCatalog
+  url: errors/zircuit-error-codes.yml
+- type: Lifecycle
+  url: lifecycle/zircuit-lifecycle.yml
+- type: Deprecation
+  url: lifecycle/zircuit-lifecycle.yml
+- type: Sandbox
+  url: sandbox/zircuit-sandbox.yml
+- type: WellKnown
+  url: well-known/zircuit-well-known.yml
+- type: MCPServer
+  url: mcp/zircuit-mcp.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: DataModel
+  url: data-model/zircuit-data-model.yml
+- type: Overlay
+  url: overlays/zircuit-gud-trading-engine-overlay.yaml
+- type: Packages
+  url: packages/zircuit-packages.yml
+- type: SDKs
+  url: packages/zircuit-packages.yml

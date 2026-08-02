@@ -1,0 +1,26 @@
+generated: '2026-07-21'
+method: searched
+source: live probes of /.well-known/ on Zircuit hosts
+notes: >-
+  No /.well-known/ discovery documents were served by any probed Zircuit host.
+  security.txt returned 404 on both www.zircuit.com and docs.zircuit.com; the
+  docs site is GitBook-hosted (returns a 404 SPA page). Absence is expected —
+  the network's discovery surface is the Ethereum JSON-RPC endpoint and the
+  documented chain configuration, not HTTP /.well-known/ documents.
+hosts:
+- host: https://www.zircuit.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+- host: https://docs.zircuit.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+- host: https://trading.ai.zircuit.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 000

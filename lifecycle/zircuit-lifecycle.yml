@@ -1,0 +1,43 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.zircuit.com/
+versioning:
+  json_rpc:
+    scheme: network-hardfork
+    current: Fjord
+    notes: Chain evolves via OP-Stack hardforks (Ecotone, Fjord); no HTTP API version.
+  gud_trading_engine:
+    scheme: uri-path
+    current: v1
+    status: beta
+    docs: https://docs.zircuit.com/infra/gud-trading-engine-beta/api-endpoint
+deprecation:
+  policy_url: https://docs.zircuit.com/
+  documented: true
+  notes: >-
+    Zircuit explicitly marks deprecated features in its documentation.
+    Deprecated surfaces include the Grants Program, Sequencer Level Security
+    (SLS) and its deep dive, the Modular Prover Design, and a legacy testnet
+    escape hatch. Deprecated pages are retained and labeled "(Deprecated)".
+  deprecated_features:
+  - Grants Program
+  - Sequencer Level Security (SLS)
+  - Sequencer Level Security Deep Dive
+  - Modular Prover Design
+  - Legacy testnet escape hatch
+status_page: https://status.zircuit.com/
+status_page_note: >-
+  status.zircuit.com resolves as a dedicated status subdomain (returns 403 to
+  automated clients / bot protection).
+security:
+  bug_bounty: https://docs.zircuit.com/info/security/bug-bounty
+  audit_reports: https://docs.zircuit.com/info/security/audit-reports
+networks:
+- name: Mainnet
+  chain_id: 48900
+  rpc: https://mainnet.zircuit.com
+  status: production
+- name: Garfield Testnet
+  chain_id: 48898
+  rpc: https://garfield-testnet.zircuit.com
+  status: testnet

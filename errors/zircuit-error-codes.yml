@@ -1,0 +1,50 @@
+generated: '2026-07-21'
+method: derived
+source: JSON-RPC 2.0 spec + Ethereum JSON-RPC (EIP-1474) + openapi/zircuit-gud-trading-engine-openapi.yml
+format: json-rpc-2.0
+notes: >-
+  Zircuit's primary API is Ethereum JSON-RPC, so its error surface is the
+  standard JSON-RPC 2.0 / EIP-1474 error-code registry (returned in the
+  `error` object of the JSON-RPC envelope). These are the well-known,
+  cross-client Ethereum RPC errors, not Zircuit-proprietary codes. The GUD
+  Trading Engine REST API uses HTTP status codes (see its OpenAPI).
+json_rpc_errors:
+- code: -32700
+  name: Parse error
+  meaning: Invalid JSON was received by the server.
+- code: -32600
+  name: Invalid request
+  meaning: The JSON sent is not a valid Request object.
+- code: -32601
+  name: Method not found
+  meaning: The method does not exist or is not available on this endpoint.
+- code: -32602
+  name: Invalid params
+  meaning: Invalid method parameters.
+- code: -32603
+  name: Internal error
+  meaning: Internal JSON-RPC error.
+- code: -32000
+  name: Server error / execution error
+  meaning: Generic server error; commonly returned for reverted eth_call or insufficient funds.
+- code: -32005
+  name: Limit exceeded
+  meaning: Request exceeds a resource/rate limit (e.g. too many results or requests).
+rest_errors:
+- status: 400
+  meaning: Invalid request parameters.
+  source_operation: openapi/zircuit-gud-trading-engine-openapi.yml#estimateOrder
+- status: 401
+  meaning: Missing or invalid API key.
+  source_operation: openapi/zircuit-gud-trading-engine-openapi.yml#estimateOrder
+- status: 422
+  meaning: No route/liquidity available for the requested trade.
+  source_operation: openapi/zircuit-gud-trading-engine-openapi.yml#estimateOrder
+- status: 429
+  meaning: Rate limit exceeded.
+  source_operation: openapi/zircuit-gud-trading-engine-openapi.yml#estimateOrder
+known_issues:
+- >-
+  RPC calls do not always accurately estimate L1 fees, so a transaction can
+  succeed on the eth_call/estimate step but later fail on-chain due to
+  insufficient funds (documented caveat).

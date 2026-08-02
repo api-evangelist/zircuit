@@ -1,0 +1,32 @@
+generated: '2026-07-21'
+method: derived
+status: candidate
+source: openapi/zircuit-gud-trading-engine-openapi.yml
+notes: >-
+  No official Zircuit-hosted or first-party MCP server was found. This is a
+  DERIVED candidate tool surface: one tool per documented GUD Trading Engine
+  operation, plus the standard Ethereum JSON-RPC read/write methods that any
+  EVM MCP server would wrap against the Zircuit RPC endpoints. Not an
+  authoritative provider claim.
+server:
+  name: zircuit
+  transport: http
+tools:
+- name: estimate_order
+  description: Get a cross-chain trade estimate/quote with signable transaction data.
+  source_operation: openapi/zircuit-gud-trading-engine-openapi.yml#estimateOrder
+- name: eth_call
+  description: Execute a read-only contract call against Zircuit L2 (JSON-RPC).
+  source: https://mainnet.zircuit.com
+- name: eth_getBalance
+  description: Read an account balance on Zircuit L2 (JSON-RPC).
+  source: https://mainnet.zircuit.com
+- name: eth_blockNumber
+  description: Return the latest Zircuit L2 block number (JSON-RPC).
+  source: https://mainnet.zircuit.com
+- name: eth_getTransactionReceipt
+  description: Fetch a transaction receipt by hash on Zircuit L2 (JSON-RPC).
+  source: https://mainnet.zircuit.com
+- name: eth_sendRawTransaction
+  description: Broadcast a signed transaction to Zircuit L2 (JSON-RPC).
+  source: https://mainnet.zircuit.com

@@ -1,0 +1,40 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.zircuit.com/infra/rpcs
+apis:
+- api: Zircuit JSON-RPC API
+  protocol: JSON-RPC 2.0 over HTTPS and WebSocket (WSS)
+  authentication: none (public RPC); paid dedicated nodes via DRPC
+  method_set: >-
+    Standard Ethereum JSON-RPC methods (eth_*, net_*, web3_*, debug_* on paid
+    DRPC nodes). EVM-compatible / OP-Stack based.
+  identifiers:
+    mainnet_chain_id: 48900
+    testnet_chain_id: 48898
+  idempotency: >-
+    JSON-RPC requests carry a client-supplied `id`; read methods (eth_call,
+    eth_getBalance, ...) are naturally idempotent. Transaction submission
+    (eth_sendRawTransaction) is idempotent per signed transaction — a nonce +
+    signed payload can be safely re-broadcast and will only execute once on
+    chain. No provider-specific idempotency-key header.
+  error_envelope: JSON-RPC 2.0 error object ({code, message, data})
+  versioning: network hardfork based (Ecotone, Fjord); no URL/header API version
+- api: Zircuit GUD Trading Engine API (Beta)
+  protocol: REST/JSON over HTTPS
+  authentication: HTTP Bearer API key
+  base_path: /api/engine/v1
+  content_type: application/json
+  idempotency: >-
+    Not documented as an idempotency-key contract. A quote request returns a
+    `tradeId`; on-chain execution is idempotent via the signed EIP-712 payload /
+    transaction nonce.
+  error_envelope: JSON error response (HTTP status + body)
+  versioning: URI-path versioned (/v1); currently Beta
+notes: >-
+  Zircuit does not document a REST idempotency-key header. On-chain safety comes
+  from Ethereum transaction nonces + signed payloads rather than an HTTP
+  idempotency contract, so no `type: Idempotency` pointer is emitted.
+cross_reference:
+  authentication: authentication/zircuit-authentication.yml
+  errors: errors/zircuit-error-codes.yml
+  lifecycle: lifecycle/zircuit-lifecycle.yml

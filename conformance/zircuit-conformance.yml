@@ -1,0 +1,42 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.zircuit.com/
+standards:
+- id: json-rpc-2.0
+  conforms: true
+  evidence: Zircuit RPC endpoints implement the JSON-RPC 2.0 protocol.
+- id: ethereum-json-rpc
+  conforms: true
+  evidence: EVM-compatible network exposing the standard Ethereum eth_*/net_*/web3_* method set.
+- id: evm-compatible
+  conforms: true
+  evidence: Fully EVM-compatible L2; standard Solidity contracts deploy via Foundry/Ethereum tooling.
+- id: op-stack
+  conforms: true
+  evidence: OP-Stack based rollup (L2 predeploys, canonical L1<>L2 bridge, Ecotone/Fjord fee model).
+- id: eip-1559
+  conforms: true
+  evidence: EIP-1559 gas pricing with L1 data-fee calculation (Ecotone/Fjord).
+- id: eip-712
+  conforms: true
+  evidence: GUD Trading Engine returns EIP-712 typed data for user signatures.
+- id: eip-7702
+  conforms: true
+  evidence: Relayer service supports EIP-7702 gasless relaying and bridging behaviors.
+- id: erc-4626
+  conforms: true
+  evidence: Zircuit Finance OVaults are cross-chain ERC-4626 vaults (via LayerZero OVault SDK).
+- id: oauth2
+  conforms: false
+- id: openid-connect
+  conforms: false
+- id: rfc9457-problem-details
+  conforms: false
+compliance_certifications:
+  soc2: not published
+  iso27001: not published
+  note: >-
+    No formal SOC 2 / ISO 27001 certifications are published. Security posture
+    is evidenced by six independent smart-contract audits and a bug-bounty
+    program rather than a compliance certification program, so no
+    `type: Compliance` pointer is emitted.

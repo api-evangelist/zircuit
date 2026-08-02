@@ -1,0 +1,80 @@
+# Zircuit
+
+## Zircuit
+
+- [Overview](https://docs.zircuit.com/zircuit-finance/overview.md)
+- [Zircuit Finance Vaults](https://docs.zircuit.com/zircuit-finance/zircuit-finance-vaults.md)
+- [Vault Integration Guide](https://docs.zircuit.com/zircuit-finance/zircuit-finance-vaults/vault-integration-guide.md): The OVault SDK simplifies depositing and redeeming tokens on OVaults, which are cross-chain ERC-4626 vaults built on top of LayerZero.
+- [Zircuit Finance Addresses](https://docs.zircuit.com/zircuit-finance/zircuit-finance-vaults/zircuit-finance-addresses.md)
+- [Security](https://docs.zircuit.com/zircuit-finance/zircuit-finance-vaults/security.md)
+- [Quick Start](https://docs.zircuit.com/build/start.md)
+- [Bridge to Zircuit](https://docs.zircuit.com/build/start/bridge.md)
+- [Deploy on Zircuit](https://docs.zircuit.com/build/start/deploy.md): A tutorial for deploying a smart contract on Zircuit using Foundry
+- [Run Zircuit](https://docs.zircuit.com/build/start/run-zircuit.md)
+- [Zircuit Token (ZRC)](https://docs.zircuit.com/build/zrc.md)
+- [LST/LRT Liquidity Hub](https://docs.zircuit.com/build/liquidity-hub.md)
+- [(Deprecated) Grants Progam](https://docs.zircuit.com/build/grants.md)
+- [Block Explorer](https://docs.zircuit.com/infra/explorer.md)
+- [Verifying Contracts](https://docs.zircuit.com/infra/explorer/verify.md)
+- [RPCs](https://docs.zircuit.com/infra/rpcs.md)
+- [Oracles](https://docs.zircuit.com/infra/oracles.md)
+- [Data & Indexing](https://docs.zircuit.com/infra/indexing.md)
+- [Relayers](https://docs.zircuit.com/infra/relayers.md)
+- [Zircuit Relayer Service](https://docs.zircuit.com/infra/relayers/zircuit-relayer-service.md)
+- [Enable Relaying Using EIP-7702](https://docs.zircuit.com/infra/relayers/zircuit-relayer-service/enable-relaying-using-eip-7702.md)
+- [Using the Zircuit Relayer Service](https://docs.zircuit.com/infra/relayers/zircuit-relayer-service/using-the-zircuit-relayer-service.md)
+- [Bridges](https://docs.zircuit.com/infra/bridges.md): Bridges provide seamless interoperability between Zircuit and other blockchain networks, enabling the efficient transfer of assets and data across different chains
+- [Canonical Bridge](https://docs.zircuit.com/infra/bridges/canonical.md)
+- [Bridging ERC20 Tokens and Withdrawing Manually](https://docs.zircuit.com/infra/bridges/canonical/bridging-erc20-tokens-manually.md): This page explains how to create and bridge ERC20 tokens from Ethereum (L1) to Zircuit (L2) and back programmatically using JavaScript with the ethers and zircuit-viem libraries.
+- [Bridging Behaviors with EIP-7702](https://docs.zircuit.com/infra/bridges/canonical/bridging-behaviors-with-eip-7702.md)
+- [ERC20 Tokens with Zircuit Canonical Bridge](https://docs.zircuit.com/infra/bridges/canonical/erc20-tokens-with-zircuit-canonical-bridge.md)
+- [Bridging ZRC to Zircuit](https://docs.zircuit.com/infra/bridges/canonical/bridging-zrc-to-zircuit.md)
+- [Bridged Token Addresses](https://docs.zircuit.com/infra/bridges/canonical/bridged-token-addresses.md)
+- [Escape Hatch](https://docs.zircuit.com/infra/bridges/canonical/legacy-testnet-escape-hatch.md)
+- [Simulation](https://docs.zircuit.com/infra/simulation.md): Enables developers to test, debug, and analyze transactions before executing them on the live network
+- [GUD Trading Engine (Beta)](https://docs.zircuit.com/infra/gud-trading-engine-beta.md)
+- [API Endpoint](https://docs.zircuit.com/infra/gud-trading-engine-beta/api-endpoint.md)
+- [Supported Chains & Contract Addresses](https://docs.zircuit.com/infra/gud-trading-engine-beta/supported-chains-and-contract-addresses.md)
+- [Development Guide](https://docs.zircuit.com/infra/gud-trading-engine-beta/development-guide.md)
+- [L1 Bridge](https://docs.zircuit.com/addresses/bridge.md): Contracts involved in canonical messaging between Ethereum and Zircuit
+- [L2 Predeploys](https://docs.zircuit.com/addresses/predeploys.md): A contract placed in the L2 genesis state. They operate natively within the EVM instead of executing as external native code outside the EVM environment
+- [L2 Precompiles](https://docs.zircuit.com/addresses/precompiles.md): A special type of smart contract built directly into the EVM that executes common cryptographic operations with greater efficiency than contracts written in high-level languages like Solidity
+- [L2 Preinstalls](https://docs.zircuit.com/addresses/preinstalls.md): General use contracts made available to improve Zircuit's UX
+- [CREATE2 Deployments](https://docs.zircuit.com/addresses/preinstalls/create2.md)
+- [Architecture](https://docs.zircuit.com/info/architecture.md)
+- [Transaction Flow](https://docs.zircuit.com/info/architecture/transaction-flow.md)
+- [Transaction Statuses](https://docs.zircuit.com/info/architecture/transaction-flow/transaction-statuses.md): Transactions on Zircuit pass through several stages before they are fully recorded on the blockchain, which are described on this page.
+- [(Deprecated) Sequencer Level Security (SLS)](https://docs.zircuit.com/info/architecture/sls.md)
+- [(Deprecated) Sequencer Level Security Deep Dive](https://docs.zircuit.com/info/architecture/sls-deep-dive.md)
+- [(Deprecated) Modular Prover Design](https://docs.zircuit.com/info/architecture/modular-prover-design.md): Zircuit operates a comprehensive zero-knowledge proving system built on a modular architecture to efficiently process L2 blocks and submit proofs to L1.
+- [Gas Pricing & Transaction Fees](https://docs.zircuit.com/info/architecture/gas-pricing-and-transaction-fees.md)
+- [L1 Data Fee Calculation (Fjord)](https://docs.zircuit.com/info/architecture/gas-pricing-and-transaction-fees/l1-data-fee-calculation-fjord.md)
+- [L1 Data Fee Calculation (Ecotone)](https://docs.zircuit.com/info/architecture/gas-pricing-and-transaction-fees/l1-data-fee-calculation.md)
+- [Supported Transaction Types](https://docs.zircuit.com/info/architecture/supported-transaction-types.md)
+- [Research](https://docs.zircuit.com/info/research.md)
+- [Publications & Grants](https://docs.zircuit.com/info/research/publications-and-grants.md)
+- [Talks & Panels](https://docs.zircuit.com/info/research/talks-and-panels.md)
+- [Security](https://docs.zircuit.com/info/security.md)
+- [Privileged Roles](https://docs.zircuit.com/info/security/privileged-roles.md): This page lists the addresses that operate the Zircuit network.
+- [Bug Bounty](https://docs.zircuit.com/info/security/bug-bounty.md)
+- [Bug bounty - Zircuit network](https://docs.zircuit.com/info/security/bug-bounty-zircuit-core.md)
+- [Audit Reports](https://docs.zircuit.com/info/security/audit-reports.md)
+- [Frequently Asked Questions (FAQ)](https://docs.zircuit.com/info/faq.md)
+- [Concepts](https://docs.zircuit.com/info/faq/concepts.md): This page provides a glossary of Zircuit concepts and terms.
+- [Media Kit](https://docs.zircuit.com/info/media-kit.md)
+
+
+---
+
+# Agent Instructions
+This documentation is published with GitBook. GitBook is the documentation platform designed so that both humans and AI agents can read, navigate, and reason over technical content effectively. Learn more at gitbook.com.
+
+## Querying This Documentation
+If you need additional information, you can query the documentation dynamically by asking a question.
+Perform an HTTP GET request on a page URL with the `ask` query parameter:
+```
+GET https://docs.zircuit.com/zircuit-finance/overview.md?ask=<question>
+```
+The question should be specific, self-contained, and written in natural language.
+The response will contain a direct answer to the question and relevant excerpts and sources from the documentation.
+Use this mechanism when the answer is not explicitly present in the current page, you need clarification or additional context, or you want to retrieve related documentation sections.

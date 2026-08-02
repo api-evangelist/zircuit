@@ -1,0 +1,32 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.zircuit.com/infra/rpcs
+description: >-
+  Zircuit's sandbox is the Garfield public testnet — a full EVM test network
+  that mirrors mainnet for deploying and exercising contracts before going
+  live. Test/live separation is by chain ID and endpoint host, the standard
+  blockchain testnet model (there are no secret test API keys).
+testnet:
+  name: Garfield Testnet
+  chain_id: 48898
+  rpc_http: https://garfield-testnet.zircuit.com
+  rpc_ws: wss://garfield-testnet.zircuit.com
+  explorer: https://explorer.garfield-testnet.zircuit.com/
+mainnet:
+  name: Mainnet
+  chain_id: 48900
+  rpc_http: https://mainnet.zircuit.com
+  rpc_ws: wss://mainnet.zircuit.com
+  explorer: https://explorer.zircuit.com/
+simulation:
+  docs: https://docs.zircuit.com/infra/simulation
+  description: >-
+    Transaction simulation surface lets developers test, debug, and analyze
+    transactions before executing them on the live network.
+gud_trading_engine:
+  note: >-
+    GUD Trading Engine API keys are provisioned by the Zircuit team and shared
+    at hackathons; the docs publish no standalone hosted test key.
+notes: >-
+  No fabricated test values. Blockchain testnets require test ETH from a faucet;
+  the docs do not publish a specific faucet URL on the RPC page.

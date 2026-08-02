@@ -1,0 +1,35 @@
+generated: '2026-07-21'
+method: searched
+source: openapi/zircuit-gud-trading-engine-openapi.yml
+docs: https://docs.zircuit.com/infra/gud-trading-engine-beta/api-endpoint
+summary:
+  types:
+  - http
+  - none
+  notes: >-
+    Zircuit exposes two distinct API surfaces with different auth models. The
+    public Ethereum JSON-RPC endpoints (mainnet.zircuit.com,
+    garfield-testnet.zircuit.com) are unauthenticated public RPC — access is
+    open, with paid higher-throughput node access available from third parties
+    such as DRPC. The GUD Trading Engine REST API requires an HTTP Bearer API
+    key provisioned by the Zircuit team.
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  api: Zircuit GUD Trading Engine API (Beta)
+  description: >-
+    API key passed as an HTTP Bearer token (Authorization: Bearer <API_KEY>).
+    Keys are provisioned by the Zircuit team and are also shared at hackathons;
+    contact the team to obtain one.
+  docs: https://docs.zircuit.com/infra/gud-trading-engine-beta/api-endpoint
+  sources:
+  - openapi/zircuit-gud-trading-engine-openapi.yml
+- name: publicRpc
+  type: none
+  api: Zircuit JSON-RPC API
+  description: >-
+    Public, unauthenticated Ethereum JSON-RPC 2.0 access over HTTPS and WSS.
+    No API key required for the community endpoints; paid dedicated node access
+    is offered by DRPC.
+  docs: https://docs.zircuit.com/infra/rpcs

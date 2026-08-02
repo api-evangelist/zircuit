@@ -1,0 +1,14 @@
+{
+  "provider": "zircuit",
+  "sources": [
+    "zircuit-orders-api-openapi.yml"
+  ],
+  "outputs": [
+    "zircuit-orders-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
