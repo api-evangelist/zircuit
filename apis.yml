@@ -67,10 +67,6 @@ apis:
     url: https://docs.zircuit.com/infra/rpcs
   - type: Sandbox
     url: https://garfield-testnet.zircuit.com
-  - type: x-json-rpc-websocket
-    url: wss://mainnet.zircuit.com
-  - type: x-chain-id
-    url: '48900'
 - aid: zircuit:zircuit-orders-api
   name: Zircuit Orders API
   description: Trade estimates and cross-chain order execution data.
@@ -139,13 +135,3 @@ common:
   url: well-known/zircuit-well-known.yml
 - type: MCPServer
   url: mcp/zircuit-mcp.yml
-- type: AgentSkill
-  url: skills/_index.yml
-- type: DataModel
-  url: data-model/zircuit-data-model.yml
-- type: Overlay
-  url: overlays/zircuit-gud-trading-engine-overlay.yaml
-- type: Packages
-  url: packages/zircuit-packages.yml
-- type: SDKs
-  url: packages/zircuit-packages.yml
