@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Zircuit GUD Trading Engine API (Beta) Orders API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Orders",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get a trade estimate",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://trading.ai.zircuit.com/api/engine/v1/order/estimate",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Returns a trade estimate/quote and the transaction data required to execute a cross-chain trade. The response includes EIP-712 typed data for user signature and encoded transaction data that can be submitted directly from a wallet or signed for gasless relayer submission."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

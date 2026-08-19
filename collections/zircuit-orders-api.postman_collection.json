@@ -1,0 +1,382 @@
+{
+  "item": [
+    {
+      "id": "faaca334-8e9f-4771-a8f9-b793805000a0",
+      "name": "Orders",
+      "description": {
+        "content": "Trade estimates and cross-chain order execution data.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ae59ccfa-51b9-47a6-b2fc-007ee565b81e",
+          "name": "Get a trade estimate",
+          "request": {
+            "name": "Get a trade estimate",
+            "description": {
+              "content": "Returns a trade estimate/quote and the transaction data required to execute a cross-chain trade. The response includes EIP-712 typed data for user signature and encoded transaction data that can be submitted directly from a wallet or signed for gasless relayer submission.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "order",
+                "estimate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"srcChainId\": \"<integer>\",\n  \"srcToken\": \"<string>\",\n  \"srcAmountWei\": \"<string>\",\n  \"destChainId\": \"<integer>\",\n  \"destToken\": \"<string>\",\n  \"slippageBps\": \"<integer>\",\n  \"userAccount\": \"<string>\",\n  \"destReceiver\": \"<string>\",\n  \"feeRecipient\": \"<string>\",\n  \"feeBps\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "99dd5259-fd1b-4050-8000-92ce1aa6eb3a",
+              "name": "A trade estimate with signable transaction data.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "order",
+                    "estimate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"srcChainId\": \"<integer>\",\n  \"srcToken\": \"<string>\",\n  \"srcAmountWei\": \"<string>\",\n  \"destChainId\": \"<integer>\",\n  \"destToken\": \"<string>\",\n  \"slippageBps\": \"<integer>\",\n  \"userAccount\": \"<string>\",\n  \"destReceiver\": \"<string>\",\n  \"feeRecipient\": \"<string>\",\n  \"feeBps\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"tradeId\": \"string\",\n  \"destTokenAmount\": \"string\",\n  \"destTokenMinAmount\": \"string\",\n  \"eip712\": {},\n  \"tx\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8976a361-9925-4dee-97dc-4b062d27f106",
+              "name": "Invalid request parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "order",
+                    "estimate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"srcChainId\": \"<integer>\",\n  \"srcToken\": \"<string>\",\n  \"srcAmountWei\": \"<string>\",\n  \"destChainId\": \"<integer>\",\n  \"destToken\": \"<string>\",\n  \"slippageBps\": \"<integer>\",\n  \"userAccount\": \"<string>\",\n  \"destReceiver\": \"<string>\",\n  \"feeRecipient\": \"<string>\",\n  \"feeBps\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "57d6364b-32ad-438d-b4e8-ea4049cbf316",
+              "name": "Missing or invalid API key.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "order",
+                    "estimate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"srcChainId\": \"<integer>\",\n  \"srcToken\": \"<string>\",\n  \"srcAmountWei\": \"<string>\",\n  \"destChainId\": \"<integer>\",\n  \"destToken\": \"<string>\",\n  \"slippageBps\": \"<integer>\",\n  \"userAccount\": \"<string>\",\n  \"destReceiver\": \"<string>\",\n  \"feeRecipient\": \"<string>\",\n  \"feeBps\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e07ff92e-801b-492a-9eff-1b5e9ac648b3",
+              "name": "No route/liquidity available for the requested trade.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "order",
+                    "estimate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"srcChainId\": \"<integer>\",\n  \"srcToken\": \"<string>\",\n  \"srcAmountWei\": \"<string>\",\n  \"destChainId\": \"<integer>\",\n  \"destToken\": \"<string>\",\n  \"slippageBps\": \"<integer>\",\n  \"userAccount\": \"<string>\",\n  \"destReceiver\": \"<string>\",\n  \"feeRecipient\": \"<string>\",\n  \"feeBps\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6f7c6cf0-2e54-460f-92fd-6de801cea35c",
+              "name": "Rate limit exceeded.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "order",
+                    "estimate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"srcChainId\": \"<integer>\",\n  \"srcToken\": \"<string>\",\n  \"srcAmountWei\": \"<string>\",\n  \"destChainId\": \"<integer>\",\n  \"destToken\": \"<string>\",\n  \"slippageBps\": \"<integer>\",\n  \"userAccount\": \"<string>\",\n  \"destReceiver\": \"<string>\",\n  \"feeRecipient\": \"<string>\",\n  \"feeBps\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b115f4d6-c267-4503-b546-e89b343e8ca9",
+              "name": "Internal error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "order",
+                    "estimate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"srcChainId\": \"<integer>\",\n  \"srcToken\": \"<string>\",\n  \"srcAmountWei\": \"<string>\",\n  \"destChainId\": \"<integer>\",\n  \"destToken\": \"<string>\",\n  \"slippageBps\": \"<integer>\",\n  \"userAccount\": \"<string>\",\n  \"destReceiver\": \"<string>\",\n  \"feeRecipient\": \"<string>\",\n  \"feeBps\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://trading.ai.zircuit.com/api/engine/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "e1bfbdd1-115d-4d2e-823f-e94baedb7d2c",
+    "name": "Zircuit GUD Trading Engine API (Beta) Orders API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The GUD Trading Engine is Zircuit's cross-chain trading infrastructure that aggregates liquidity across multiple blockchain networks and bridge protocols to return best-execution quotes and ready-to-sign transaction data. This OpenAPI description was generated by the API Evangelist enrichment pipeline from the provider's published REST documentation (https://docs.zircuit.com/infra/gud-trading-engine-beta/api-endpoint) and reflects the endpoint(s) documented there. The documentation notes that additional endpoints may exist that are not yet publicly detailed.\n\nContact Support:\n Name: Zircuit",
+      "type": "text/plain"
+    }
+  }
+}

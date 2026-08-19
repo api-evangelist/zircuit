@@ -2,12 +2,10 @@ generated: '2026-07-21'
 method: derived
 status: candidate
 source: openapi/zircuit-gud-trading-engine-openapi.yml
-notes: >-
-  No official Zircuit-hosted or first-party MCP server was found. This is a
-  DERIVED candidate tool surface: one tool per documented GUD Trading Engine
-  operation, plus the standard Ethereum JSON-RPC read/write methods that any
-  EVM MCP server would wrap against the Zircuit RPC endpoints. Not an
-  authoritative provider claim.
+notes: 'No official Zircuit-hosted or first-party MCP server was found. This is a DERIVED candidate tool
+  surface: one tool per documented GUD Trading Engine operation, plus the standard Ethereum JSON-RPC read/write
+  methods that any EVM MCP server would wrap against the Zircuit RPC endpoints. Not an authoritative provider
+  claim.'
 server:
   name: zircuit
   transport: http
@@ -30,3 +28,9 @@ tools:
 - name: eth_sendRawTransaction
   description: Broadcast a signed transaction to Zircuit L2 (JSON-RPC).
   source: https://mainnet.zircuit.com
+deployment:
+  mode: none
+  verified: derived
+  tools: 6
+  checked: '2026-08-12'
+  source: catalog MCP census
