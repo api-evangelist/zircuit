@@ -73,6 +73,8 @@ apis:
   humanURL: https://docs.zircuit.com/infra/rpcs
   baseURL: https://mainnet.zircuit.com
   tags:
+  - Order
+  tags_raw:
   - Orders
   properties:
   - type: OpenAPI
