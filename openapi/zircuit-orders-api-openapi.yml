@@ -49,6 +49,24 @@ paths:
           description: Internal error.
 components:
   schemas:
+    OrderEstimateResponse:
+      type: object
+      properties:
+        tradeId:
+          type: string
+          description: Unique trade identifier.
+        destTokenAmount:
+          type: string
+          description: Expected output amount on the destination chain.
+        destTokenMinAmount:
+          type: string
+          description: Minimum acceptable output after slippage.
+        eip712:
+          type: object
+          description: EIP-712 typed data for the user to sign.
+        tx:
+          type: object
+          description: Encoded transaction data for execution.
     OrderEstimateRequest:
       type: object
       required:
@@ -91,24 +109,6 @@ components:
         feeBps:
           type: string
           description: Optional fee percentage, in basis points.
-    OrderEstimateResponse:
-      type: object
-      properties:
-        tradeId:
-          type: string
-          description: Unique trade identifier.
-        destTokenAmount:
-          type: string
-          description: Expected output amount on the destination chain.
-        destTokenMinAmount:
-          type: string
-          description: Minimum acceptable output after slippage.
-        eip712:
-          type: object
-          description: EIP-712 typed data for the user to sign.
-        tx:
-          type: object
-          description: Encoded transaction data for execution.
   securitySchemes:
     bearerAuth:
       type: http
